@@ -127,14 +127,14 @@ export default function ResultList() {
           {portfolioData
             ? portfolioData.Result.sites.map((site, i) => {
                 return (
-                  <div>
+                  <div key={i}>
                     <p>
                       <b> Site Name </b>: {site.name}
                     </p>
                     <div>
-                      {site.projects.map((proj) => {
+                      {site.projects.map((proj, i) => {
                         return (
-                          <p>
+                          <p key={i}>
                             <b>Project Name</b>: {proj.name}
                           </p>
                         );
@@ -151,7 +151,7 @@ export default function ResultList() {
             ? portfolioData.Result.sites[0].projects[0].documents.map(
                 (doc, i) => {
                   return (
-                    <p>
+                    <p key={i}>
                       <b>Document Name </b>: {doc.name}
                     </p>
                   );
