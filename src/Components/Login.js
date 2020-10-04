@@ -14,7 +14,7 @@ export default function Login() {
     });
   };
 
-  var config = {
+  const config = {
     method: "post",
     url: "https://edocsapi.azurewebsites.net/Auth/api/Login",
     headers: {
