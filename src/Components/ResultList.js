@@ -111,7 +111,7 @@ export default function ResultList() {
     <div>
       <SearchForm changeHandler={changeHandler} />
       <h2 className={classes.header}> Your Results </h2>
-      <button className={styles.clearButton} onClick={() => clear()}>
+      <button className={classes.clearButton} onClick={() => clear()}>
         Clear Results
       </button>
 
@@ -180,7 +180,9 @@ const useStyles = makeStyles({
     border: "2px solid lavender",
     width: "50%",
     margin: "0 auto",
-    height: "200px",
+    height: "auto",
+    marginBottom: 20,
+    marginTop: 20,
   },
 
   dataContainer: {
