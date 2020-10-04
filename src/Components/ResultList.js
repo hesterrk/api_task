@@ -122,7 +122,7 @@ export default function ResultList() {
       </div>
 
       <div className={classes.dataContainer}>
-        <p> Data</p>
+        <h2> Data</h2>
         <div>
           {portfolioData
             ? portfolioData.Result.sites.map((site, i) => {
@@ -196,7 +196,8 @@ const useStyles = makeStyles({
   },
 
   clearButton: {
-    borderRadius: "10",
+    borderRadius: "10px",
     backgroundColor: "transparent",
+    borderColor: "black",
   },
 });
