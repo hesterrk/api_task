@@ -1,12 +1,17 @@
 import React from "react";
 import Styled from "styled-components";
 
-export default function SearchForm() {
+export default function SearchForm({ changeHandler }) {
   return (
     <Div>
       <label htmlFor="enter">
         Search For...
-        <Input id="enter" type="text" name="text"></Input>
+        <Input
+          id="enter"
+          type="text"
+          name="text"
+          onChange={changeHandler}
+        ></Input>
       </label>
     </Div>
   );
