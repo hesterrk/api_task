@@ -52,6 +52,10 @@ export default function ResultList() {
       });
   }, []);
 
+  function clear(e) {
+    setFilterPortfolioData(portfolioData);
+  }
+
   function changeHandler(event) {
     setMatchTask(event.target.value);
   }
@@ -60,6 +64,10 @@ export default function ResultList() {
     <div>
       <SearchForm changeHandler={changeHandler} />
       <h2 className={classes.header}> Your Results </h2>
+      <button className={styles.clearButton} onClick={() => clear()}>
+        {" "}
+        Clear Results{" "}
+      </button>
 
       <div className={classes.dataContainer}>
         <div>
@@ -121,5 +129,10 @@ const useStyles = makeStyles({
     width: "75%",
     boxShadow:
       "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+  },
+
+  clearButton: {
+    borderRadius: "10",
+    backgroundColor: "transparent",
   },
 });
