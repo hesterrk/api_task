@@ -11,7 +11,10 @@ export default function ResultList() {
 
   const token = localStorage.getItem("token");
 
-  const [filterPortfolioData, setFilterPortfolioData] = useState([]);
+  const [filterPortfolioSite, setFilterPortfolioSite] = useState([]);
+  const [filterPortfolioDoc, setFilterPortfolioDoc] = useState([]);
+  const [filterPortfolioProj, setFilterPortfolioProj] = useState([]);
+
   const [matchTask, setMatchTask] = useState();
 
   const configPortfolio = {
