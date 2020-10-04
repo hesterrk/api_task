@@ -112,11 +112,17 @@ export default function ResultList() {
       <SearchForm changeHandler={changeHandler} />
       <h2 className={classes.header}> Your Results </h2>
       <button className={styles.clearButton} onClick={() => clear()}>
-        {" "}
-        Clear Results{" "}
+        Clear Results
       </button>
 
+      <div className={classes.resultsContainer}>
+        <p>{filterPortfolioSite ? filterPortfolioSite[0] : ""} </p>
+        <p>{filterPortfolioDoc ? filterPortfolioDoc.name : ""} </p>
+        <p>{filterPortfolioProj ? filterPortfolioProj.name : ""} </p>
+      </div>
+
       <div className={classes.dataContainer}>
+        <p> Data</p>
         <div>
           {portfolioData
             ? portfolioData.Result.sites.map((site, i) => {
@@ -166,6 +172,15 @@ export default function ResultList() {
 const useStyles = makeStyles({
   header: {
     fontSize: "1rem",
+  },
+  resultsContainer: {
+    display: "flex",
+    flexDirection: "column",
+
+    border: "2px solid lavender",
+    width: "50%",
+    margin: "0 auto",
+    height: "200px",
   },
 
   dataContainer: {
