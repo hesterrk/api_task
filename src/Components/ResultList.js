@@ -52,9 +52,13 @@ export default function ResultList() {
       });
   }, []);
 
+  function changeHandler(event) {
+    setMatchTask(event.target.value);
+  }
+
   return (
     <div>
-      <SearchForm />
+      <SearchForm changeHandler={changeHandler} />
       <h2 className={classes.header}> Your Results </h2>
 
       <div className={classes.dataContainer}>
