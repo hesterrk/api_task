@@ -47,7 +47,9 @@ export default function ResultList() {
           setPortfolioData(responseOne);
           setTaskData(responseTwo);
 
-          setFilterPortfolioData(responseOne);
+          setFilterPortfolioSite(responseOne);
+          setFilterPortfolioDoc(responseOne);
+          setFilterPortfolioProj(responseOne);
         })
       )
       .catch((errors) => {
@@ -55,9 +57,51 @@ export default function ResultList() {
       });
   }, []);
 
-  function clear(e) {
-    setFilterPortfolioData(portfolioData);
+  function SearchDataSet(matchTask) {
+    let siteResult = portfolioData
+      ? portfolioData.Result.sites.filter((site) =>
+          site.name.includes(matchTask)
+        )
+      : null;
+
+    let documentResult = portfolioData
+      ? portfolioData.Result.sites[0].projects[0].documents.filter((doc) =>
+          doc.name.includes(matchTask)
+        )
+      : null;
+
+    let projectResult = portfolioData
+      ? portfolioData.Result.sites[0].projects.filter((proj) =>
+          proj.name.includes(matchTask)
+        )
+      : null;
+
+    if (siteResult && siteResult !== null) {
+      let searchResult = siteResult.map((s) => s.name);
+      setFilterPortfolioSite(searchResult);
+    }
+    if (documentResult && documentResult !== null) {
+      let docResult = documentResult ? documentResult[0] : null;
+
+      setFilterPortfolioDoc(docResult);
+    }
+
+    if (projectResult && projectResult !== null) {
+      let projResult = projectResult ? projectResult[0] : null;
+
+      setFilterPortfolioProj(projResult);
+    }
   }
+
+  function clear(e) {
+    setFilterPortfolioSite(portfolioData);
+    setFilterPortfolioDoc(portfolioData);
+    setFilterPortfolioProj(portfolioData);
+  }
+
+  useEffect(() => {
+    SearchDataSet(matchTask);
+  }, [matchTask]);
 
   function changeHandler(event) {
     setMatchTask(event.target.value);
