@@ -157,12 +157,11 @@ export default function ResultList() {
                   );
                 }
               )
-            : "nothing "}
+            : " "}
         </div>
 
         <div>
-          <b> Task Count </b> :
-          {taskData ? taskData.Result.tasks.length : "empty "}
+          <b> Task Count </b> :{taskData ? taskData.Result.tasks.length : " "}
         </div>
       </div>
     </div>
