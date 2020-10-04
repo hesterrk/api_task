@@ -1,3 +1,22 @@
+
+## About Project:
+
+Manipulating data from live API
+
+## Technology Used:
+
+• MaterialUI
+
+• Styled-Components
+
+• React
+
+• Javascript
+
+• HTML/CSS
+
+## How to Run the Project:
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
