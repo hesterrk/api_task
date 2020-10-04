@@ -11,6 +11,9 @@ export default function ResultList() {
 
   const token = localStorage.getItem("token");
 
+  const [filterPortfolioData, setFilterPortfolioData] = useState([]);
+  const [matchTask, setMatchTask] = useState();
+
   const configPortfolio = {
     method: "get",
     url: "https://edocsapi.azurewebsites.net/Core6/api/Portfolio/ByUserId",
@@ -40,6 +43,8 @@ export default function ResultList() {
 
           setPortfolioData(responseOne);
           setTaskData(responseTwo);
+
+          setFilterPortfolioData(responseOne);
         })
       )
       .catch((errors) => {
